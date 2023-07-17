@@ -1,0 +1,54 @@
+<html>
+
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="signincss.css">
+    <link rel="icon" type="image/jpg" href="icon.jpg">
+    <script>
+        function validate()
+        {
+            var username = document.form.username.value;
+            var password = document.form.pass.value;
+            if ( username == "user" && password == "1234")
+            {
+                alert ("Login successfully");
+                window.location = "#"; // Redirecting to other page.
+            }
+            else if (username==null || username=="")
+            {  
+              alert("Name can't be blank");  
+              return false;  
+            }
+            else if(password.length<4)
+            {  
+              alert("Password must be at least 4 characters long.");  
+              return false;  
+            }  
+            else
+            {
+              alert("Enter the Username or Password correctly");
+              return false;
+            }
+        }
+        function forgot(){
+          document.location = "signup.html"
+        }
+    </script>
+    <title>Sign in</title>
+  </head>
+
+  <body>
+    <div class="main">
+      <p class="sign" align="center"><img src="logo.jpg" width="200"></p>
+      <form class="form1" name="form">
+        <input class="un" name="username" type="text" align="center" placeholder="Username">
+        <input class="pass" name="pass" type="password" align="center" placeholder="Password">
+        <a onclick="validate()" class="submit" align="center">Sign in</a>
+        <p class="forgot" align="center"><a href="#">Forgot Password</a></p>
+        <p class="forgot" align="center" onclick="forgot()"><a href="#">Sign Up</a></p>    
+      </form>      
+    </div>  
+  </body>
+
+</html>
